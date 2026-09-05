@@ -60,7 +60,7 @@ export default function Contact() {
 
     try {
       const response = await fetch(
-        "https://portfolio-backend-omega-tawny.vercel.app/api/contact/send",
+        "https://rajan-portfolio-backend-84hc.onrender.com/api/contact/send",
         {
           method: "POST",
           headers: {
