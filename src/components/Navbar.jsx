@@ -8,7 +8,7 @@ export default function Navbar() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.from(".navbar > *", {
+      gsap.from(".logo, .desktop-hire, .menu-btn", {
         y: -60,
         opacity: 0,
         stagger: 0.2,
