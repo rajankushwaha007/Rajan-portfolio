@@ -42,7 +42,7 @@ const projects = [
       "Bootstrap",
     ],
     github: "https://github.com/rajankushwaha007",
-    live: "#",
+    live: "https://rajan-news-app.vercel.app",
   },
 
   {
