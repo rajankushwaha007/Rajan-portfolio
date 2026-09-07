@@ -14,21 +14,47 @@ export default function Hero() {
   const leftRef = useRef(null);
 
   const [playing, setPlaying] = useState(false);
-  const hasAnimated = useRef(false);
+  const [showSocialIcons, setShowSocialIcons] = useState(true);
 
-  // ENSURE VIDEO STARTS PAUSED
+  // VIDEO STARTS PAUSED
   useEffect(() => {
     const video = videoRef.current;
+
     if (!video) return;
 
     video.pause();
     setPlaying(false);
   }, []);
 
+  // HIDE SOCIAL ICONS WHEN CONTACT SECTION IS VISIBLE
+  useEffect(() => {
+    const handleScroll = () => {
+      const contactSection = document.getElementById("contact");
+
+      if (!contactSection) return;
+
+      const rect = contactSection.getBoundingClientRect();
+
+      const contactVisible =
+        rect.top < window.innerHeight &&
+        rect.bottom > 0;
+
+      setShowSocialIcons(!contactVisible);
+    };
+
+    // Check immediately
+    handleScroll();
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   // GSAP ANIMATION
   useEffect(() => {
     const ctx = gsap.context(() => {
-
       gsap.from(".left > *", {
         y: 60,
         opacity: 0,
@@ -36,35 +62,36 @@ export default function Hero() {
         duration: 1,
         ease: "power4.out",
       });
+
       gsap.from(".social-icons > *", {
         x: -100,
         opacity: 0,
-
         duration: 2.5,
         ease: "power4.out",
       });
+
       gsap.from(".right > *", {
-
         opacity: 0,
-
         duration: 2,
         scale: 0.5,
         ease: "power4.out",
       });
+
       gsap.from(videoRef.current, {
         scale: 1.2,
         opacity: 0,
         duration: 1.5,
-        ease: "power3.out"
+        ease: "power3.out",
       });
-
     });
 
     return () => ctx.revert();
   }, []);
-  // PLAY / PAUSE TOGGLE
+
+  // PLAY / PAUSE VIDEO
   const toggleVideo = () => {
     const video = videoRef.current;
+
     if (!video) return;
 
     if (video.paused) {
@@ -79,34 +106,45 @@ export default function Hero() {
   return (
     <section id="home" className="hero">
 
-      <div className="social-icons">
+      {/* SOCIAL ICONS */}
+      <div
+        className={`social-icons ${showSocialIcons ? "" : "social-hidden"
+          }`}
+      >
         <div>
-          <a href="https://github.com/rajankushwaha007">
+          <a
+            href="https://github.com/rajankushwaha007"
+            target="_blank"
+            rel="noreferrer"
+          >
             <FaGithub />
           </a>
         </div>
+
         <div>
-          <a href="https://www.linkedin.com/in/rajan-kushwaha-69911b354">
+          <a
+            href="https://www.linkedin.com/in/rajan-kushwaha-69911b354"
+            target="_blank"
+            rel="noreferrer"
+          >
             <FaLinkedin />
           </a>
         </div>
+
         <div>
-          <a href="https://www.instagram.com/freak_coder_007?igsi=MXp5NDU3d2dmejBu">
+          <a
+            href="https://www.instagram.com/freak_coder_007?igsi=MXp5NDU3d2dmejBu"
+            target="_blank"
+            rel="noreferrer"
+          >
             <FaInstagram />
           </a>
         </div>
-
-
-
       </div>
 
       {/* BACKGROUND VIDEO */}
-      <div>
-
-      </div>
       <video
         ref={videoRef}
-
         loop
         playsInline
         className="hero-video"
@@ -114,12 +152,17 @@ export default function Hero() {
         <source src={heroVideo} type="video/mp4" />
       </video>
 
+      {/* OVERLAY */}
+      <div className="overlay"></div>
+
       {/* HERO CONTENT */}
       <div className="hero-content">
 
         <div className="left" ref={leftRef}>
 
-          <p className="intro">Hi, I'm</p>
+          <p className="intro">
+            Hi, I'm
+          </p>
 
           <h1>
             Rajan Kushwaha
@@ -127,20 +170,31 @@ export default function Hero() {
           </h1>
 
           <p>
-            I build modern web experiences using MongoDB, Express, React and Node.js to create fast, scalable and user-friendly applications.
+            I build modern web experiences using MongoDB, Express, React and
+            Node.js to create fast, scalable and user-friendly applications.
           </p>
 
           <div className="buttons">
-            
-            <a href="#projects" className="primary">
+
+            <a
+              href="#projects"
+              className="primary"
+            >
               View My Work
             </a>
 
-            <a href="#contact" className="secondary">
+            <a
+              href="#contact"
+              className="secondary"
+            >
               Contact Me
             </a>
 
-            <a href="/resume.pdf" download className="resume">
+            <a
+              href="/resume.pdf"
+              download
+              className="resume"
+            >
               Download Resume
             </a>
 
@@ -149,6 +203,7 @@ export default function Hero() {
         </div>
 
         <div className="right">
+
           <button
             ref={playBtn}
             className="playButton"
@@ -156,11 +211,14 @@ export default function Hero() {
           >
             {playing ? "❚❚" : "▶"}
           </button>
+
         </div>
 
       </div>
 
-      <div className="scroll">Scroll ↓</div>
+      <div className="scroll">
+        Scroll ↓
+      </div>
 
     </section>
   );
