@@ -23,7 +23,7 @@ const projects = [
       "Cloudinary",
     ],
     github: "https://github.com/rajankushwaha007",
-    live: "#",
+    live: "https://shopmart-server-final-0dwi.onrender.com",
   },
 
   {
@@ -85,7 +85,7 @@ export default function Projects() {
   return (
     <section id="projects" className="projects">
 
-     
+
 
       <div className="projects-top">
 
