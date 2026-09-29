@@ -77,7 +77,7 @@ const projects = [
       "Tailwind CSS",
     ],
     github: "https://github.com/rajankushwaha007",
-    live: "#",
+    live: "https://realtime-chat-app-a5t3.onrender.com",
   },
 ];
 
