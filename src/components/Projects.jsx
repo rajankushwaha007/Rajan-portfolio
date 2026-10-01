@@ -58,7 +58,7 @@ const projects = [
       "Lenis",
     ],
     github: "https://github.com/rajankushwaha007",
-    live: "#",
+    live: "https://employee-management-ai.onrender.com",
   },
 
   {
