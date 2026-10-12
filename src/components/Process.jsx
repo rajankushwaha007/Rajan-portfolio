@@ -14,7 +14,7 @@ const Process = () => {
             const path = pathRef.current;
 
 
-            
+
 
             // Title animation
             gsap.from(".process-title", {
@@ -55,15 +55,13 @@ const Process = () => {
                     <br />
                     turn ideas into
                     <br />
-                    real-world
+                    intelligent
                     <br />
-                    applications
+                    AI-powered solutions
                 </h1>
 
                 <p>
-                    I follow a structured, creative, and highly
-                    technical approach to turn ideas into robust
-                    full-stack applications.
+                    I follow a structured, creative, and technically driven approach to building scalable full-stack applications and integrating Generative AI to solve real-world problems.
                 </p>
             </div>
 
@@ -89,9 +87,7 @@ const Process = () => {
                     <span>01</span>
                     <h3>Research</h3>
                     <p>
-                        I start by understanding goals,
-                        requirements and technical challenges
-                        to build a solid foundation.
+                        I analyze project goals, user needs, and technical requirements to identify the right full-stack and AI solutions.
                     </p>
                 </div>
 
@@ -99,9 +95,7 @@ const Process = () => {
                     <span>02</span>
                     <h3>Design</h3>
                     <p>
-                        Creating clean interfaces,
-                        intuitive experiences and scalable
-                        user journeys.
+                        I create clean interfaces, intuitive user experiences, and scalable application architectures.
                     </p>
                 </div>
 
@@ -109,8 +103,7 @@ const Process = () => {
                     <span>03</span>
                     <h3>Development</h3>
                     <p>
-                        Developing fast, reliable and
-                        maintainable applications.
+                        I build responsive MERN applications and integrate Generative AI to deliver intelligent features.
                     </p>
                 </div>
 
@@ -118,8 +111,7 @@ const Process = () => {
                     <span>04</span>
                     <h3>Deploy</h3>
                     <p>
-                        Developing fast, reliable and
-                        maintainable applications.
+                        I deploy, test, and optimize applications for reliable performance, scalability, and usability
                     </p>
                 </div>
             </div>

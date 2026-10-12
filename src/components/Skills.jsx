@@ -11,7 +11,7 @@ const skillData = [
         skills: [
             // { name: "Java", level: 90 },
             { name: "C++", level: 85 },
-            // { name: "Python", level: 75 },
+            // { name: "Generative AI", level: 75 },
         ],
     },
     {
@@ -55,19 +55,20 @@ const skillData = [
             { name: "OOP", level: 85 },
         ],
     },
+    {
+        title: "Generative AI",
+        skills: [
+            { name: "Gen AI", level: 85 },
+        ],
+    },
 ];
 
 
 const Skills = () => {
 
     const sectionRef = useRef(null);
-
-
     useEffect(() => {
-
         const ctx = gsap.context(() => {
-
-
             const tl = gsap.timeline({
                 scrollTrigger: {
                     trigger: sectionRef.current,
@@ -76,100 +77,79 @@ const Skills = () => {
                 }
             });
 
-
-
             tl.from(".skill-tag", {
                 y: -50,
                 opacity: 0,
                 duration: 0.8,
                 ease: "power3.out"
             })
+                .from(".skills-title", {
+                    y: 50,
+                    opacity: 0,
+                    duration: 0.8,
+                    ease: "power3.out"
+                }, "-=0.4")
 
 
-            .from(".skills-title", {
-                y: 50,
-                opacity: 0,
-                duration: 0.8,
-                ease: "power3.out"
-            }, "-=0.4")
+                .from(".skills-subtitle", {
+                    y: 30,
+                    opacity: 0,
+                    duration: 0.8,
+                    ease: "power3.out"
+                }, "-=0.4")
 
 
-            .from(".skills-subtitle", {
-                y: 30,
-                opacity: 0,
-                duration: 0.8,
-                ease: "power3.out"
-            }, "-=0.4")
+                .from(".skill-card", {
+                    y: 80,
+                    opacity: 0,
+                    stagger: 0.15,
+                    duration: 0.8,
+                    ease: "power3.out"
+                }, "-=0.3")
 
 
-            .from(".skill-card", {
-                y: 80,
-                opacity: 0,
-                stagger: 0.15,
-                duration: 0.8,
-                ease: "power3.out"
-            }, "-=0.3")
-
-
-            .from(".progress-bar", {
-                width: 0,
-                duration: 1,
-                stagger: 0.08,
-                ease: "power2.out"
-            }, "-=0.4");
-
+                .from(".progress-bar", {
+                    width: 0,
+                    duration: 1,
+                    stagger: 0.08,
+                    ease: "power2.out"
+                }, "-=0.4");
 
             ScrollTrigger.refresh();
-
-
         }, sectionRef);
-
-
 
         return () => ctx.revert();
 
 
     }, []);
 
-
-
     return (
-
-        <section 
-            className="skills" 
-            id="skills" 
+        <section
+            className="skills"
+            id="skills"
             ref={sectionRef}
         >
-
-
             <span className="skill-tag">
                 Technical Skills
             </span>
 
-
-
             <h2 className="skills-title">
                 MY SKILLSET
             </h2>
-
-
 
             <p className="skills-subtitle">
                 A comprehensive overview of my programming languages,
                 frameworks, databases and engineering concepts.
             </p>
 
-
-
-
             <div className="skills-container">
 
 
                 {
-                    skillData.map((category,index)=>(
+                    skillData.map((category, index) => (
 
-                        <div 
-                            className="skill-card" 
+                        <div
+                            className="skill-card"
                             key={index}
                         >
 
@@ -178,17 +158,13 @@ const Skills = () => {
                                 {category.title}
                             </h3>
 
-
-
                             {
-                                category.skills.map((skill,i)=>(
+                                category.skills.map((skill, i) => (
 
-                                    <div 
-                                        className="skill" 
+                                    <div
+                                        className="skill"
                                         key={i}
                                     >
-
-
                                         <div className="skill-info">
 
                                             <span>
@@ -201,15 +177,12 @@ const Skills = () => {
 
                                         </div>
 
-
-
-
                                         <div className="progress">
 
                                             <div
                                                 className="progress-bar"
                                                 style={{
-                                                    width:`${skill.level}%`
+                                                    width: `${skill.level}%`
                                                 }}
                                             >
 
@@ -217,15 +190,10 @@ const Skills = () => {
 
                                         </div>
 
-
-
                                     </div>
 
                                 ))
                             }
-
-
-
                         </div>
 
                     ))
@@ -233,7 +201,6 @@ const Skills = () => {
 
 
             </div>
-
 
         </section>
 

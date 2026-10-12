@@ -166,12 +166,11 @@ export default function Hero() {
 
           <h1>
             Rajan Kushwaha
-            <span>Full Stack Developer</span>
+            <span>MERN Stack Developer & Generative AI Developer</span>
           </h1>
 
           <p>
-            I build modern web experiences using MongoDB, Express, React and
-            Node.js to create fast, scalable and user-friendly applications.
+            I build modern, scalable web applications using MongoDB, Express.js, React.js, and Node.js, integrating Generative AI to create intelligent, AI-powered user experiences.
           </p>
 
           <div className="buttons">

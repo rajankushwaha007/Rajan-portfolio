@@ -99,9 +99,8 @@ export default function About() {
           <h1>Hello!</h1>
 
           <p>
-            Hi, my name is <span>Rajan Kushwaha</span>, an aspiring software
-            engineer based in India, dedicated to crafting clean, functional,
-            and highly scalable full-stack applications.
+            Hi, my name is <span>Rajan Kushwaha</span>, an aspiring software engineer based in India, passionate about building modern, scalable full-stack applications and exploring the potential of Generative AI.
+            I work with MongoDB, Express.js, React.js, and Node.js (MERN Stack) to develop responsive web applications with reliable backend systems. I'm also interested in Generative AI, Large Language Models (LLMs), prompt engineering, and AI API integration to build smarter, AI-powered solutions.
           </p>
 
           <div className="tech-stack">

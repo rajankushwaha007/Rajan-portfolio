@@ -102,16 +102,15 @@ export default function Contact() {
         {/* LEFT SIDE */}
         <div className="contact__text contact__animate">
           <p className="eyebrow">
-            Have an Idea? Let’s Make It Real.
+            Have an Idea? Let's Bring It to Life.
           </p>
 
           <h2>
-            Ready to Build the Next Big Thing?
+            Ready to Build Something Innovative?
           </h2>
 
           <p className="contact__sub">
-            Tell us what you do — whatever it is — and our team will reach out
-            about Any Help we can give.
+            Let's connect to discuss your ideas, explore opportunities, and create modern web applications with MERN Stack and Generative AI.
           </p>
         </div>
 
@@ -153,7 +152,7 @@ export default function Contact() {
               <input
                 type="text"
                 name="talent"
-                placeholder="What's your talent?"
+                placeholder="What's Your Idea?"
                 value={formData.talent}
                 onChange={handleChange}
                 required
@@ -163,7 +162,7 @@ export default function Contact() {
               <textarea
                 name="message"
                 rows="4"
-                placeholder="Tell us why you belong on that stage"
+                placeholder="Share your project idea, goals, or how we can work together..."
                 value={formData.message}
                 onChange={handleChange}
                 required
@@ -190,7 +189,7 @@ export default function Contact() {
               >
                 {loading
                   ? "Sending..."
-                  : "Submit Application →"}
+                  : "Start a Conversation →"}
               </button>
             </>
           )}

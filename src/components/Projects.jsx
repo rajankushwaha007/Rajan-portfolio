@@ -9,9 +9,9 @@ import {
 const projects = [
   {
     id: "01",
-    title: "E-Commerce",
+    title: "E-Commerce + AI",
     description:
-      "A full-stack e-commerce platform built with the MERN stack, featuring secure authentication, product browsing, category filtering, search, shopping cart, wishlist, checkout, order management, admin dashboard, and a responsive user-friendly interface.",
+      "A full-stack e-commerce platform built with the MERN stack, featuring secure authentication, product browsing, category filtering, search, shopping cart, wishlist, checkout, order management, and an admin dashboard. Integrated with Generative AI to deliver intelligent product discovery and AI-powered shopping assistance through a responsive, user-friendly interface.",
     tech: [
       "React",
       "Node.js",
@@ -28,9 +28,9 @@ const projects = [
 
   {
     id: "02",
-    title: "NewsApp",
+    title: "NewsApp + AI",
     description:
-      "A responsive news application that lets users browse the latest news, explore different categories, search for articles, and read stories in a clean and simple interface. Built with React and NewsAPI for fetching real-time news.",
+      "A responsive news application built with React.js and NewsAPI, featuring AI-powered article search, automatic article summarization into 3–4 key points, and Hindi-to-English and English-to-Hindi translation. Users can explore the latest news, browse categories, and understand news articles faster through intelligent AI features and a user-friendly interface.",
     tech: [
       "React",
       "Node.js",
@@ -47,9 +47,9 @@ const projects = [
 
   {
     id: "03",
-    title: "CRUD Applications",
+    title: "Employee Management System + AI",
     description:
-      "A full-stack CRUD application focused on creating, viewing, updating, and deleting records with a clean interface, form handling, API integration, database operations, and responsive design built with the MERN stack.",
+      "A full-stack employee management application built with the MERN stack, featuring employee records management, search, filtering, pagination, analytics, and AI-powered natural-language queries using Gemini API, with a clean interface, database integration, and responsive design",
     tech: [
       "React",
       "CSS",
@@ -63,9 +63,9 @@ const projects = [
 
   {
     id: "04",
-    title: "Chat App",
+    title: "AI-Powered Chat App",
     description:
-      "A real-time messaging application with instant chat, online user status, authentication, responsive interface, media sharing support, and Socket.io powered communication for seamless conversations.",
+      "A full-stack real-time messaging application enhanced with Generative AI, featuring instant messaging, intelligent AI-powered conversations, secure authentication, online user status, media sharing, and Socket.IO-powered communication for seamless interactions.",
     tech: [
       "React",
       "Node.js",
@@ -100,8 +100,7 @@ export default function Projects() {
         </h2>
 
         <p>
-          A selection of projects that showcase my expertise in full-stack
-          development and modern architecture.
+          A selection of projects showcasing my expertise in full-stack development, Generative AI integration, and modern application architecture.
         </p>
 
       </div>
